@@ -1,6 +1,9 @@
 @extends('Layouts.master')
 @section('content')
 <!-- product section -->
+<div class="mb-3">
+    <a href="{{route('category.create')}}" class="btn btn-success mt-5 mr-5 ml-5">Create New Category</a>
+</div>
 <div class="product-section mt-150 mb-150">
     <div class="container">
         <div class="row">
