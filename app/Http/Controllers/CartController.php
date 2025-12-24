@@ -34,7 +34,7 @@ class CartController extends Controller
         // dd($cartItems);
         return view('Cart.show', compact('cartItems'));
     }
-
+    //
     public function store(Request $request)
     {
         //Auth User
