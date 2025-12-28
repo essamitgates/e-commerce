@@ -13,8 +13,10 @@ class CartController extends Controller
     {
         // Auth::user();
 
-        $cartItems = Cart::where('user_id', Auth::id())->with('product')->get();
-
+        // $cartItems = Cart::where('user_id', Auth::id())->with('product')->get();
+        $cartItems = Cart::with('product')
+            ->where('user_id', Auth::id())
+            ->get();
         return view('Cart.show', compact('cartItems'));
     }
 

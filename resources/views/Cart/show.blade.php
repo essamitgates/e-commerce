@@ -10,6 +10,7 @@
                     <table class="cart-table">
                         <thead class="cart-table-head">
                             <tr class="table-head-row">
+                                <th>Username</th>
                                 <th class="product-image">Product Image</th>
                                 <th class="product-name">Name</th>
                                 <th class="product-price">Price</th>
@@ -21,6 +22,7 @@
                         <tbody>
                             @foreach ($cartItems as $item)
                             <tr class="table-body-row">
+                                <td class="product-name">{{ Auth::user()->name }}</td>
                                 <td class="product-image"><img style="height: 100px;" src="{{ $item->product->imagepath ? url($item->product->imagepath) : '' }}" alt=""></td>
                                 <td class="product-name">{{ $item->product->name }}</td>
                                 <td class="product-price"><span>Per Kg</span> 85$ </td>
@@ -32,7 +34,7 @@
                                     <form action="{{ route('cart.destroy', $item->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button class="btn btn-danger"><i class="fas fa-trash"></i></button>
+                                        <button onclick="return confirm('Are you sure you want to delete this product?')" class="btn btn-danger"><i class="fas fa-trash"></i></button>
                                     </form>
                                 </td>
                             </tr>

@@ -16,6 +16,7 @@
             <th>Image</th>
             <th>Name</th>
             <th>Price</th>
+            <th>Category</th>
             <th>Actions</th>
         </tr>
     </thead>
@@ -25,6 +26,7 @@
             <td><img style="height: 100px;" src="{{ $product->imagepath ? url($product->imagepath) : '' }}" alt=""></td>
             <td>{{ $product->name }}</td>
             <td><span>Per Kg</span> 85$ </td>
+            <td>{{ $product->category->name }}</td>
             <td>
 
                 <form action="{{route('cart.store')}}" method="post">
@@ -33,7 +35,7 @@
                     <button type="submit" class="btn btn-warning cart-btn"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
                 </form>
                 <a href="{{route('product.show',$product->id)}}" class="btn btn-info "><i class="fas fa-eye"></i> View</a>
-                
+
 
 
                 <a href="/product/{{$product->id}}/edit" class="btn btn-primary"><i class="fas fa-pen"></i> Edit</a>
@@ -60,6 +62,5 @@
     $(document).ready(function() {
         $('#productTable').DataTable();
     });
-
 </script>
 @endsection

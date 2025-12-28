@@ -14,14 +14,15 @@ class ProductController extends Controller
     public function index()
     {
         // $result = Product::paginate(5)->get();
-        $result = Product::get();
+        // $result = Product::get();
+        $result = Product::with('category')->get();
         return view('product.productTable', ['products' => $result]);
     }
     public function show($productId)
     {
         // get product and its photos
         $result = Product::with('photos')->where('id', $productId)->get();
-       
+
         return view('product.show', ['products' => $result]);
     }
     public function searchProduct(Request $request)
@@ -71,7 +72,7 @@ class ProductController extends Controller
                 ]);
             }
         }
-        
+
         return redirect('/product/create');
     }
     public function edit($productId)
