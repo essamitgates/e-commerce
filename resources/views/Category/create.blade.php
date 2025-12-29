@@ -4,7 +4,7 @@
 
 <form action="{{ route('category.store') }}" method="POST">
     @csrf
-    <div>
+    <div class="mb-3 mt-5">
         <label for="name">Category Name:</label>
         <input type="text" id="name" name="name" value="{{ old('name') }}" required>
         <span class="text-danger">
@@ -12,8 +12,9 @@
             {{ $message }}
             @enderror
         </span>
+        <button type="submit" class="mb-3 btn btn-primary">Create</button>
+
     </div>
-    <button type="submit">Create Category</button>
 </form>
 
 

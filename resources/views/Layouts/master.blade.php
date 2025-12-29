@@ -8,10 +8,10 @@
     <meta name="description" content="Responsive Bootstrap4 Shop Template, Created by Imran Hossain from https://imransdesign.com/">
 
     <!-- title -->
-    <title>Fruitkha</title>
+    <title>Princess Store</title>
 
     <!-- favicon -->
-    <link rel="shortcut icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('assets/img/favicon.ico') }}">
 
     <!-- google font -->
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
@@ -69,7 +69,7 @@
                     <div class="main-menu-wrap">
                         <!-- logo -->
                         <div class="site-logo">
-                            <a href="index.html">
+                            <a href="/">
                                 <img src="{{ asset('assets/img/logo.png') }}" alt="">
 
                             </a>
@@ -85,7 +85,6 @@
                                         <li><a href="index_2.html">Slider Home</a></li>
                                     </ul>
                                 </li>
-                                <li><a href="about.html">About</a></li>
                                 <li><a href="{{route('category.index')}}">Categories</a></li>
                                 <li><a href="{{route('product.index')}}">Products</a></li>
                                 @guest
@@ -180,18 +179,14 @@
                 <div class="col-lg-9 offset-lg-2 text-center">
                     <div class="hero-text">
                         <div class="hero-text-tablecell">
-                            <p class="subtitle">Fresh & Organic</p>
-                            <h1>Delicious Seasonal Fruits</h1>
-                            <div class="hero-btns">
-                                <a href="shop.html" class="boxed-btn">Fruit Collection</a>
-                                <a href="contact.html" class="bordered-btn">Contact Us</a>
-                            </div>
+                            <h1>Where Every Gift Tells a Story</h1>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
     <!-- end hero area -->
 
     <!-- features list section -->
@@ -237,6 +232,19 @@
         </div>
     </div>
     <!-- end features list section -->
+    <div class="container mt-3">
+        @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+        @endif
+
+        @if(session('error'))
+        <div class="alert alert-danger">
+            {{ session('error') }}
+        </div>
+        @endif
+    </div>
     @yield('content')
     <!-- footer -->
     <div class="footer-area">
@@ -290,8 +298,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-12">
-                    <p>Copyrights &copy; 2019 - <a href="https://imransdesign.com/">Imran Hossain</a>, All Rights Reserved.<br>
-                        Distributed By - <a href="https://themewagon.com/">Themewagon</a>
+                    <p>Copyrights &copy; 2025 - <a href="https://imransdesign.com/">Mohamed Essam</a>, All Rights Reserved.
                     </p>
                 </div>
                 <div class="col-lg-6 text-right col-md-12">

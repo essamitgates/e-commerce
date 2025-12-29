@@ -24,7 +24,7 @@ class CategoryController extends Controller
         }
         return view('category.show', ['categories' => $result]);
     }
-    
+
     public function create()
     {
         return view('category.create');
@@ -40,6 +40,7 @@ class CategoryController extends Controller
             'name' => request('name'),
             'description' => request('description'),
         ]);
-        return redirect('/category/create');
+
+        return redirect()->route('category.index')->with('success', 'Category created successfully.');
     }
 }
